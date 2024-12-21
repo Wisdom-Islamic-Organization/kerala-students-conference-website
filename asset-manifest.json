@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kerala-students-conference-website/static/css/main.18dfb25f.css",
-    "main.js": "/kerala-students-conference-website/static/js/main.f7b487ac.js",
+    "main.js": "/kerala-students-conference-website/static/js/main.bdcdc2c5.js",
     "static/js/458.060fb076.chunk.js": "/kerala-students-conference-website/static/js/458.060fb076.chunk.js",
     "static/js/949.944767e8.chunk.js": "/kerala-students-conference-website/static/js/949.944767e8.chunk.js",
     "static/js/722.db3e28f0.chunk.js": "/kerala-students-conference-website/static/js/722.db3e28f0.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/632.c75208bd.chunk.js": "/kerala-students-conference-website/static/js/632.c75208bd.chunk.js",
     "index.html": "/kerala-students-conference-website/index.html",
     "main.18dfb25f.css.map": "/kerala-students-conference-website/static/css/main.18dfb25f.css.map",
-    "main.f7b487ac.js.map": "/kerala-students-conference-website/static/js/main.f7b487ac.js.map",
+    "main.bdcdc2c5.js.map": "/kerala-students-conference-website/static/js/main.bdcdc2c5.js.map",
     "458.060fb076.chunk.js.map": "/kerala-students-conference-website/static/js/458.060fb076.chunk.js.map",
     "949.944767e8.chunk.js.map": "/kerala-students-conference-website/static/js/949.944767e8.chunk.js.map",
     "722.db3e28f0.chunk.js.map": "/kerala-students-conference-website/static/js/722.db3e28f0.chunk.js.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.18dfb25f.css",
-    "static/js/main.f7b487ac.js"
+    "static/js/main.bdcdc2c5.js"
   ]
 }
