@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[949],{6949:function(e,n,t){t.r(n);var r=t(2791),o=t(2478),i=t(184),u=(0,r.lazy)((function(){return Promise.all([t.e(758),t.e(510),t.e(914)]).then(t.bind(t,3914))}));n.default=function(){return(0,i.jsx)(o.default,{children:(0,i.jsx)(u,{title:"Register for the Conference",content:"Join us for an enriching experience at the Kerala Students Conference. Fill out the form below to secure your spot.",id:"register-form"})})}}}]);
-//# sourceMappingURL=949.944767e8.chunk.js.map
