@@ -1,4 +1,4 @@
-import { lazy, useState, useEffect } from "react";
+import { lazy, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { Button } from "antd";
