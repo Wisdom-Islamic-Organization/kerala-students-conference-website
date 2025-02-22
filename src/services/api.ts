@@ -15,7 +15,7 @@ interface RegistrationPayload {
 }
 
 const API_BASE_URL = 'https://guideportal.wisdomislam.org/api';
-const API_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2d1aWRlcG9ydGFsLndpc2RvbWlzbGFtLm9yZy9hcGkvdXNlckxvZ2luIiwiaWF0IjoxNzI2ODI5MjQ1LCJleHAiOjE3Mjk0MjEyNDUsIm5iZiI6MTcyNjgyOTI0NSwianRpIjoiREZURzhCTWJKUVNhQmMxcSIsInN1YiI6IjM5MzkiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4DWWguWflfup5WBzteaM3GaC7IsJ0axobrhzUvlJSUY';
+const API_TOKEN = process.env.REACT_APP_GUIDE_API_TOKEN;
 
 export const submitRegistration = async (data: RegistrationPayload) => {
   try {
