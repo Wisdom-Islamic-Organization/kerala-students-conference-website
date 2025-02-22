@@ -14,7 +14,14 @@ const SectionTitle = styled.h2`
   margin-bottom: 3rem;
 `;
 
-const ExamCard = styled(Link)`
+const ExamCard = styled(({ to, ...props }) => {
+  const isExternal = to.startsWith('http');
+  return isExternal ? (
+    <a href={to} target="_blank" rel="noopener noreferrer" {...props} />
+  ) : (
+    <Link to={to} {...props} />
+  );
+})`
   display: block;
   background: white;
   padding: 2rem;
