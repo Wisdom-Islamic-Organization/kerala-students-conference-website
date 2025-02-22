@@ -75,7 +75,7 @@ const Footer = ({ t }: { t: TFunction }) => {
                   icon={faFacebook}
                 />
                 <SocialLink
-                  href="https://www.instagram.com/wisdomstudents/"
+                  href="https://www.instagram.com/keralastudentsconference/"
                   icon={faInstagram}
                 />
                 <SocialLink

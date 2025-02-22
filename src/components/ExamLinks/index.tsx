@@ -54,10 +54,16 @@ const ExamDescription = styled.p`
   color: #546274;
 `;
 
+const ExamSubTitle = styled.p`
+  font-size: 16px;
+  color: #000;
+`;
+
 interface ExamLinksProps {
   title: string;
   exams: {
     title: string;
+    subTitle: string;
     description: string;
     link: string;
     icon: string;
@@ -75,6 +81,7 @@ const ExamLinks = ({ title, exams }: ExamLinksProps) => {
               <ExamCard to={exam.link}>
                 <ExamIcon src={getAssetPath(exam.icon)} alt={exam.title} />
                 <ExamTitle>{exam.title}</ExamTitle>
+                <ExamSubTitle>{exam.subTitle}</ExamSubTitle>
                 <ExamDescription>{exam.description}</ExamDescription>
               </ExamCard>
             </Col>
