@@ -64,7 +64,7 @@ const ExamLinks = ({ title, exams }: ExamLinksProps) => {
         <SectionTitle>{title}</SectionTitle>
         <Row gutter={[32, 32]} justify="center">
           {exams.map((exam, index) => (
-            <Col key={index} xs={20} sm={12} md={10} lg={8}>
+            <Col key={index} xs={18} sm={10} md={8} lg={6}>
               <ExamCard to={exam.link}>
                 <ExamIcon src={getAssetPath(exam.icon)} alt={exam.title} />
                 <ExamTitle>{exam.title}</ExamTitle>

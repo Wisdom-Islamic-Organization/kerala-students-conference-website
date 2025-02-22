@@ -21,15 +21,10 @@ const routes = [
     protected: true,
   },
   {
-    path: "/albayan",
+    path: "/:examId",
     exact: true,
-    component: "Exams/Albayan",
-  },
-  {
-    path: "/alif",
-    exact: true,
-    component: "Exams/Alif",
-  },
+    component: "Exams",
+  }
 ];
 
 export default routes;

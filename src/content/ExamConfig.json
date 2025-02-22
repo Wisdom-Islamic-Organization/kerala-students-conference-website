@@ -1,0 +1,12 @@
+{
+  "alif": {
+    "logo": "/img/icons/alifexam.png",
+    "formUrl": "https://forms.gle/HCmT8CetiX1piTBaA",
+    "alt": "Alif Logo"
+  },
+  "albayan": {
+    "logo": "/img/icons/albayan.png",
+    "formUrl": "https://forms.gle/D65MiRPXa1v5bwcEA",
+    "alt": "Albayan Logo"
+  }
+} 
