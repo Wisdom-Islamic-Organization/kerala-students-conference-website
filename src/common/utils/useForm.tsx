@@ -28,6 +28,16 @@ interface IRegistrationValues {
   isDifferentWhatsApp?: string;
 }
 
+interface APIRegistrationResponse {
+  message: string;
+  status: string;
+  data: {
+    id: number;
+    name: string;
+    mobile: string;
+  }
+}
+
 const initialRegistrationValues: IRegistrationValues = {
   name: "",
   email: "",
@@ -36,8 +46,8 @@ const initialRegistrationValues: IRegistrationValues = {
   gender: "",
   subject: "",
   institution: "",
-  yearOfStudy: "",
-  yearOfCompletion: "",
+  yearOfStudy: "1",
+  yearOfCompletion: "2025",
   district: "",
   otherDistrict: "",
   localBody: "",
@@ -86,9 +96,10 @@ export const useForm = <T extends IRegistrationValues | IContactValues>(
           timestamp: serverTimestamp()
         });
 
+        let response: APIRegistrationResponse | null = null;
         // Submit to external API
         if (formType === 'registration') {
-          await submitRegistration({
+          response = await submitRegistration({
             event_id: 84,
             mobile: (values as IRegistrationValues).contactNumber || '',
             name: values.name || '',
@@ -99,13 +110,15 @@ export const useForm = <T extends IRegistrationValues | IContactValues>(
             class: (values as IRegistrationValues).standard || '',
             subject: (values as IRegistrationValues).subject || '',
             institution: (values as IRegistrationValues).institution || '',
-            year_of_study: (values as IRegistrationValues).yearOfStudy || '',
-            year_of_completion: (values as IRegistrationValues).yearOfCompletion || '',
+            year_of_study: (values as IRegistrationValues).yearOfStudy || '1',
+            year_of_completion: (values as IRegistrationValues).yearOfCompletion || '2025',
             district_name: (values as IRegistrationValues).district || '',
             district_name_other: (values as IRegistrationValues).otherDistrict || '',
             local_body: (values as IRegistrationValues).localBody || '',
           });
         }
+
+        console.log(response);
 
         // Reset form state
         setFormState({
@@ -119,7 +132,7 @@ export const useForm = <T extends IRegistrationValues | IContactValues>(
         // Show success notification after scrolling
         setTimeout(() => {
           notification["success"]({
-            message: "Registration Successful",
+            message: response?.message || "Registration Successful",
             description: "Thank you for registering! We'll contact you soon.",
             duration: 3,
           });

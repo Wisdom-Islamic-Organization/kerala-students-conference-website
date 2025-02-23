@@ -139,7 +139,7 @@ const RegisterForm = ({ title, content, id, t }: RegisterFormProps) => {
                     <StyledSelect
                       placeholder="Year of Study"
                       onChange={(value) => handleChange({ target: { name: 'yearOfStudy', value }})}
-                      value={values.yearOfStudy || undefined}
+                      value={values.yearOfStudy || 0}
                     >
                       {yearOfStudyOptions.map((year) => (
                         <Option key={year} value={year}>{`${year}${getYearSuffix(year)} Year`}</Option>

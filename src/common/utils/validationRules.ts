@@ -17,9 +17,7 @@ const validate = (values: RegisterValues): RegisterValues => {
     errors.age = "Please enter a valid age";
   }
 
-  if (!values.email) {
-    errors.email = "Email address is required";
-  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+  if (values.email && !/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = "Email address is invalid";
   }
 
