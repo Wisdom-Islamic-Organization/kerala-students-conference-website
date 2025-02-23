@@ -3,6 +3,7 @@ import { notification } from "antd";
 import { db } from "../../config/firebase";
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { useHistory } from "react-router-dom";
+import { submitRegistration } from "../../services/api";
 
 interface IContactValues {
   name?: string;
@@ -84,6 +85,27 @@ export const useForm = <T extends IRegistrationValues | IContactValues>(
           ...values,
           timestamp: serverTimestamp()
         });
+
+        // Submit to external API
+        if (formType === 'registration') {
+          await submitRegistration({
+            event_id: 84,
+            mobile: (values as IRegistrationValues).contactNumber || '',
+            name: values.name || '',
+            age: (values as IRegistrationValues).age || '',
+            sex: (values as IRegistrationValues).gender === 'male' ? 'Male' : 'Female',
+            whatsapp: (values as IRegistrationValues).whatsappNumber || (values as IRegistrationValues).contactNumber || '',
+            email: (values as IRegistrationValues).email || '',
+            class: (values as IRegistrationValues).standard || '',
+            subject: (values as IRegistrationValues).subject || '',
+            institution: (values as IRegistrationValues).institution || '',
+            year_of_study: (values as IRegistrationValues).yearOfStudy || '',
+            year_of_completion: (values as IRegistrationValues).yearOfCompletion || '',
+            district_name: (values as IRegistrationValues).district || '',
+            district_name_other: (values as IRegistrationValues).otherDistrict || '',
+            local_body: (values as IRegistrationValues).localBody || '',
+          });
+        }
 
         // Reset form state
         setFormState({
