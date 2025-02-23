@@ -1,20 +1,22 @@
 interface RegistrationPayload {
   event_id: number;
-  event_type: string;
-  country_code: string;
-  mobile: string;
   name: string;
-  age: string;
-  sex: string;
-  whatsapp_country_code: string;
-  whatsapp: string;
   email: string;
-  pin_code: string;
-  place: string;
-  job: string;
+  age: string;
+  class: string;
+  sex: string;
+  subject: string;
+  institution: string;
+  year_of_study: string;
+  year_of_completion: string;
+  district_name: string;
+  district_name_other: string;
+  local_body: string;
+  mobile: string;
+  whatsapp: string;
 }
 
-const API_BASE_URL = 'https://guideportal.wisdomislam.org/api';
+const API_BASE_URL = process.env.REACT_APP_GUIDE_API_BASE_URL;
 const API_TOKEN = process.env.REACT_APP_GUIDE_API_TOKEN;
 
 export const submitRegistration = async (data: RegistrationPayload) => {

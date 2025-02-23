@@ -90,20 +90,20 @@ export const useForm = <T extends IRegistrationValues | IContactValues>(
         if (formType === 'registration') {
           await submitRegistration({
             event_id: 84,
-            event_type: 'program',
-            country_code: '',
             mobile: (values as IRegistrationValues).contactNumber || '',
             name: values.name || '',
             age: (values as IRegistrationValues).age || '',
             sex: (values as IRegistrationValues).gender === 'male' ? 'Male' : 'Female',
-            whatsapp_country_code: '',
             whatsapp: (values as IRegistrationValues).whatsappNumber || (values as IRegistrationValues).contactNumber || '',
             email: (values as IRegistrationValues).email || '',
-            pin_code: '',
-            place: (values as IRegistrationValues).district !== 'Others' ? 
-              (values as IRegistrationValues).district || '' : 
-              (values as IRegistrationValues).otherDistrict || '',
-            job: ''
+            class: (values as IRegistrationValues).standard || '',
+            subject: (values as IRegistrationValues).subject || '',
+            institution: (values as IRegistrationValues).institution || '',
+            year_of_study: (values as IRegistrationValues).yearOfStudy || '',
+            year_of_completion: (values as IRegistrationValues).yearOfCompletion || '',
+            district_name: (values as IRegistrationValues).district || '',
+            district_name_other: (values as IRegistrationValues).otherDistrict || '',
+            local_body: (values as IRegistrationValues).localBody || '',
           });
         }
 
