@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Row, Col } from "antd";
 import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { getAssetPath } from "../../utils/paths";
+import { collection, query, orderBy, getDocs } from 'firebase/firestore';
+import { db } from '../../config/firebase';
+import { News } from '../../types/news';
+import { LoadingOutlined } from '@ant-design/icons';
 
 import styled from "styled-components";
 
@@ -81,20 +85,37 @@ const NewsDescription = styled.p`
   font-size: 1.1rem;
 `; 
 
-interface NewsItem {
-  type: 'youtube' | 'image' | 'facebook' | 'instagram';
-  url: string;
-  title: string;
-  description?: string;
-}
-
 interface NewsCarouselProps {
   title: string;
-  news: NewsItem[];
 }
 
-const NewsCarousel = ({ title, news }: NewsCarouselProps) => {
+const NewsCarousel = ({ title }: NewsCarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [news, setNews] = useState<News[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const newsQuery = query(
+          collection(db, 'news'),
+          orderBy('timestamp', 'desc')
+        );
+        const snapshot = await getDocs(newsQuery);
+        const newsData = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        })) as News[];
+        setNews(newsData);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchNews();
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === news.length - 1 ? 0 : prev + 1));
@@ -104,7 +125,7 @@ const NewsCarousel = ({ title, news }: NewsCarouselProps) => {
     setCurrentSlide((prev) => (prev === 0 ? news.length - 1 : prev - 1));
   };
 
-  const renderMedia = (item: NewsItem) => {
+  const renderMedia = (item: News) => {
     switch (item.type) {
       case 'youtube':
         return (
@@ -139,6 +160,18 @@ const NewsCarousel = ({ title, news }: NewsCarouselProps) => {
         );
     }
   };
+
+  if (loading) {
+    return (
+      <NewsSection>
+        <Row justify="center" align="middle">
+          <Col>
+            <LoadingOutlined style={{ fontSize: 24 }} />
+          </Col>
+        </Row>
+      </NewsSection>
+    );
+  }
 
   return (
     <NewsSection>
