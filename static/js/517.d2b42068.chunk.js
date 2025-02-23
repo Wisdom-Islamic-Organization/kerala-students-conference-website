@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[517],{6517:(e,t,r)=>{r.r(t),r.d(t,{default:()=>i});var n=r(5043),o=r(1766),s=r(579);const a=(0,n.lazy)((()=>Promise.all([r.e(614),r.e(53),r.e(8),r.e(674),r.e(745)]).then(r.bind(r,1745)))),i=()=>(0,s.jsx)(o.default,{children:(0,s.jsx)(a,{title:"Register for the Conference",content:"Join us for an enriching experience at the Kerala Students Conference. Fill out the form below to secure your spot.",id:"register-form"})})}}]);
-//# sourceMappingURL=517.d2b42068.chunk.js.map
