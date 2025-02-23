@@ -16,10 +16,11 @@ const NewsSection = styled.section`
   background: #fff;
 `;
 
-const NewsTitle = styled.h2`
+const NewsTitle = styled.h3`
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   color: #18216d;
+  font-size: 1.5rem;
 `;
 
 const CarouselContainer = styled.div`
@@ -60,6 +61,7 @@ const MediaContainer = styled.div`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
 `;
 
 const IframeContainer = styled.div`
@@ -78,12 +80,46 @@ const IframeContainer = styled.div`
   }
 `;
 
+const MediaContent = styled.div`
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  max-width: 800px;
+  margin: 0 auto;
+`;
+
 const NewsDescription = styled.p`
   text-align: center;
-  margin-top: 1rem;
+  margin: 1rem auto;
   color: #18216d;
   font-size: 1.1rem;
-`; 
+  max-width: 90%;
+  line-height: 1.6;
+`;
+
+const NewsLink = styled.a`
+  display: inline-block;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #1890ff;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const SocialMediaContent = styled(MediaContent)`
+  height: 400px; // Match typical 16:9 video height
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  margin: 0;
+  max-width: 100%;
+`;
 
 interface NewsCarouselProps {
   title: string;
@@ -138,25 +174,29 @@ const NewsCarousel = ({ title }: NewsCarouselProps) => {
             />
           </IframeContainer>
         );
-      case 'image':
-        return (
-          <img 
-            src={getAssetPath(item.url)} 
-            alt={item.title}
-            style={{ width: '100%', height: 'auto', maxHeight: '400px', objectFit: 'cover' }}
-          />
-        );
       case 'facebook':
       case 'instagram':
         return (
-          <IframeContainer>
-            <iframe
-              src={item.url}
-              title={item.title}
-              allowTransparency={true}
-              allow="encrypted-media"
+          <SocialMediaContent>
+            <NewsTitle>{item.title}</NewsTitle>
+            {item.description && <NewsDescription>{item.description}</NewsDescription>}
+            {item.url && <NewsLink href={item.url} target="_blank" rel="noopener noreferrer">View on {item.type}</NewsLink>}
+          </SocialMediaContent>
+        );
+      case 'image':
+        return (
+          <>
+            <img 
+              src={getAssetPath(item.url)} 
+              alt={item.title}
+              style={{ width: '100%', height: 'auto', maxHeight: '400px', objectFit: 'cover' }}
             />
-          </IframeContainer>
+            <MediaContent>
+              <NewsTitle>{item.title}</NewsTitle>
+              {item.description && <NewsDescription>{item.description}</NewsDescription>}
+              {item.url && <NewsLink href={item.url} target="_blank" rel="noopener noreferrer">Read More</NewsLink>}
+            </MediaContent>
+          </>
         );
     }
   };
@@ -192,9 +232,6 @@ const NewsCarousel = ({ title }: NewsCarouselProps) => {
                   <MediaContainer>
                     {renderMedia(item)}
                   </MediaContainer>
-                  {item.type === 'image' && item.description && (
-                    <NewsDescription>{item.description}</NewsDescription>
-                  )}
                 </CarouselSlide>
               ))}
 
