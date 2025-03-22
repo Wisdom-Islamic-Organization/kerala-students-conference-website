@@ -2,25 +2,11 @@
   "title": "Exam Registrations",
   "exams": [
     {
-      "title": "Al Bayan",
-      "subTitle": "Al Bayan Online Qur'an Contest",
-      "description": "Register for Al Bayan Exam 2025",
-      "link": "/albayan",
-      "icon": "/img/icons/albayan.png"
-    },
-    {
       "title": "Alif",
       "subTitle": "അലിഫ് കിഡ്സ് എക്സാം",
       "description": "Register for Alif Exam 2025",
       "link": "/alif",
       "icon": "/img/icons/alifexam.png"
-    },
-    {
-      "title": "QVP",
-      "subTitle": "ക്വുർആൻ വിജ്ഞാന പരീക്ഷ",
-      "description": "Register for QVP Exam 2025",
-      "link": "https://guide.wisdomislam.org/#/events/qvp",
-      "icon": "/img/icons/qvp.png"
     }
   ]
 } 
