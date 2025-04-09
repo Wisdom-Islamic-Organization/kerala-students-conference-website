@@ -8,5 +8,10 @@
     "logo": "/img/icons/alifexam.png",
     "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLScyD2ns5kcJtB4BdUCGzrXuPOabYE1LN-hjPpIp-RJ7y8xFXg/viewform?embedded=true",
     "alt": "Alif Logo"
+  },
+  "cre": {
+    "logo": "/img/icons/cre.png",
+    "formUrl": "https://forms.gle/YZefd8K4nHGuy8x48",
+    "alt": "CRE Logo"
   }
 } 

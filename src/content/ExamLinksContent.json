@@ -7,6 +7,13 @@
       "description": "Register for Alif Exam 2025",
       "link": "/alif",
       "icon": "/img/icons/alifexam.png"
+    },
+    {
+      "title": "CRE",
+      "subTitle": "Continuous Religious Education",
+      "description": "Register for CRE Vacation (Online)",
+      "link": "/cre",
+      "icon": "/img/icons/cre.png"
     }
   ]
 } 
