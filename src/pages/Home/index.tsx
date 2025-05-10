@@ -1,10 +1,9 @@
 import { lazy } from "react";
 import AboutContent from "../../content/AboutContent.json";
-import HeroContent from "../../content/HeroContent.json";
-import ProgramsContent from "../../content/ProgramsContent.json";
 import ContactContent from "../../content/ContactContent.json";
 import ExamLinksContent from "../../content/ExamLinksContent.json";
-import styled from "styled-components";
+import HeroContent from "../../content/HeroContent.json";
+import ProgramsContent from "../../content/ProgramsContent.json";
 
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
@@ -13,7 +12,6 @@ const HeroBlock = lazy(() => import("../../components/HeroBlock"));
 const Programs = lazy(() => import("../../components/Programs"));
 const Contact = lazy(() => import("../../components/ContactForm"));
 const ExamLinks = lazy(() => import("../../components/ExamLinks"));
-const NewsCarousel = lazy(() => import("../../components/NewsCarousel"));
 
 const Home = () => {
   return (
