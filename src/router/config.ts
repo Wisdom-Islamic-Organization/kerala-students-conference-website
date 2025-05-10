@@ -21,10 +21,15 @@ const routes = [
     protected: true,
   },
   {
+    path: "/schedule",
+    exact: true,
+    component: "Schedule",
+  },
+  {
     path: "/:examId",
     exact: true,
     component: "Exams",
-  }
+  },
 ];
 
 export default routes;

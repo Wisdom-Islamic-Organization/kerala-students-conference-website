@@ -101,24 +101,26 @@ const HeroBlock = ({ title, subtitle, description, buttons, backgroundImages }: 
         <Title>{title}</Title>
         {subtitle && <Subtitle>{subtitle}</Subtitle>}
         {description && <Description>{description}</Description>}
-        <CountdownContainer>
-          <CountdownItem>
-            <CountdownNumber>{timeLeft.days}</CountdownNumber>
-            <CountdownLabel>Days</CountdownLabel>
-          </CountdownItem>
-          <CountdownItem>
-            <CountdownNumber>{timeLeft.hours}</CountdownNumber>
-            <CountdownLabel>Hours</CountdownLabel>
-          </CountdownItem>
-          <CountdownItem>
-            <CountdownNumber>{timeLeft.minutes}</CountdownNumber>
-            <CountdownLabel>Minutes</CountdownLabel>
-          </CountdownItem>
-          <CountdownItem>
-            <CountdownNumber>{timeLeft.seconds}</CountdownNumber>
-            <CountdownLabel>Seconds</CountdownLabel>
-          </CountdownItem>
-        </CountdownContainer>
+        {(timeLeft.days !== 0 || timeLeft.hours !== 0 || timeLeft.minutes !== 0 || timeLeft.seconds !== 0) && (
+          <CountdownContainer>
+            <CountdownItem>
+              <CountdownNumber>{timeLeft.days}</CountdownNumber>
+              <CountdownLabel>Days</CountdownLabel>
+            </CountdownItem>
+            <CountdownItem>
+              <CountdownNumber>{timeLeft.hours}</CountdownNumber>
+              <CountdownLabel>Hours</CountdownLabel>
+            </CountdownItem>
+            <CountdownItem>
+              <CountdownNumber>{timeLeft.minutes}</CountdownNumber>
+              <CountdownLabel>Minutes</CountdownLabel>
+            </CountdownItem>
+            <CountdownItem>
+              <CountdownNumber>{timeLeft.seconds}</CountdownNumber>
+              <CountdownLabel>Seconds</CountdownLabel>
+            </CountdownItem>
+          </CountdownContainer>
+        )}
         <ButtonGroup>
           {buttons.map((button, index) => (
             <Button

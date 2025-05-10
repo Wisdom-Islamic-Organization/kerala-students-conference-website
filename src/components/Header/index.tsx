@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Row, Col, Drawer } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Container from "../../common/Container";
 import { SvgIcon } from "../../common/SvgIcon";
 import { Button } from "../../common/Button";
@@ -60,6 +60,13 @@ const Header = ({ t }: { t: TFunction }) => {
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("programs")}>
           <Span>{t("Programs")}</Span>
+        </CustomNavLinkSmall>
+        <CustomNavLinkSmall>
+          <Span>
+            <Link to="/schedule" style={{ color: 'inherit', textDecoration: 'none' }}>
+              {t("Schedule")}
+            </Link>
+          </Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall style={{ width: "180px" }}>
           <Span>

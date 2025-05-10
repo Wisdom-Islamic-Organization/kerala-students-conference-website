@@ -15,30 +15,6 @@ const Contact = lazy(() => import("../../components/ContactForm"));
 const ExamLinks = lazy(() => import("../../components/ExamLinks"));
 const NewsCarousel = lazy(() => import("../../components/NewsCarousel"));
 
-const VersileContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 0;
-  background-color: transparent;
-`;
-
-const VersileLink = styled.a`
-  display: block;
-  max-width: 100%;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.02);
-  }
-`;
-
-const VersileImage = styled.img`
-  max-width: 100%;
-  height: auto;
-`;
-
 const Home = () => {
   return (
     <>
@@ -49,14 +25,6 @@ const Home = () => {
         buttons={HeroContent.buttons}
         backgroundImages={HeroContent.backgroundImages}
       />
-      <NewsCarousel
-        title={"Latest Updates"}
-      />
-      <VersileContainer>
-        <VersileLink href="https://versile.keralastudentsconference.com" target="_blank" rel="noopener noreferrer">
-          <VersileImage src="/versile.png" alt="Versile - Did you find the word today?" />
-        </VersileLink>
-      </VersileContainer>
       <Container>
         <ScrollToTop />
         <About
@@ -77,6 +45,18 @@ const Home = () => {
           id="contact"
         />
       </Container>
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.703298791809!2d76.2205321!3d10.985753100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cd0003297241%3A0xb7c81b8c65767d17!2sKerala%20Students%20Conference%20Venue!5e0!3m2!1sen!2sin!4v1746877673274!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style={{ border: 0, maxWidth: '100%' }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Kerala Students Conference Venue Map"
+        />
+      </div>
     </>
   );
 };
