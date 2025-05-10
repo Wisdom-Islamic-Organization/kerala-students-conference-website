@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[585],{1585:(e,h,i)=>{i.r(h),i.d(h,{default:()=>t});i(5043);var d=i(579);const t=()=>(0,d.jsx)("div",{style:{width:"100%",height:"calc(100vh - 80px)",paddingTop:24,boxSizing:"border-box"},children:(0,d.jsx)("iframe",{src:"/schedule.pdf",title:"Program Schedule",width:"100%",height:"100%",style:{border:"none",minHeight:600}})})}}]);
+//# sourceMappingURL=585.91d446b4.chunk.js.map
